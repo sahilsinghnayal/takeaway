@@ -1,0 +1,37 @@
+
+/* container ................................................................*/
+.takeAwaycontainer {
+    width: 60%;
+    overflow: scroll;
+    max-width: 900px;
+    overflow: hidden;
+    border:2px solid red;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* height: 100vh; */
+    flex-wrap: wrap;
+    /* background: rgb(203, 212, 212); */
+  }
+  .fullcontainer{
+    display: flex;
+  }
+  .leftcontainer{
+      border :2px solid rgb(68, 68, 65);
+      background-color: #e5e5e5;
+      max-width: 500px;
+      width: 40%;
+  }
+ .cartcontainer{
+  /* border:2px solid rgb(0, 0, 0); */
+  margin-top:6px;
+  
+ }
+ .cartcontainer h3 {
+     text-align: start;
+     padding: 18px;
+ }
+ .headeroffood h2{
+  /* border: 2px solid green; */
+  color:rgb(0, 0, 0);
+ }

@@ -4,7 +4,7 @@ import TakeawayNav from "./TakeawayNav";
 import Card from "./Card";
 import "./nav.css";
 import LeftContainer from "./leftcontainerCmp/LeftContainer";
-import Modal from "./leftcontainerCmp/Modal"
+
 export default function TakeAway() {
     const [word, setword] = useState("Mains");
   return (

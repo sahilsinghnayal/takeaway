@@ -8,7 +8,7 @@ function LeftNav({word,setword}) {
   e.preventDefault();
   setword(e.target.textContent);
   // console.log(e.target.textContent);
-  console.log(word);
+  // console.log(word);
 }
 
      

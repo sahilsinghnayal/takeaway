@@ -17,7 +17,7 @@ function MyVerticallyCenteredModal(props) {
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
               <h3>
-              
+              {props.data.Product.Description}
               </h3>
    
             </Modal.Title>
@@ -36,19 +36,17 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-function Modals(value) {
-  const [modalShow, setModalShow] = React.useState(false);
-//  console.log(value)
+function Modals({data,modalShow,setModalShow}) {
+  
+ console.log("sahil",data);
   return (
     <>
-      <Button style={{width:"79px",height:"37px",fontSize:"11px"}} variant="primary" onClick={() => setModalShow(true)}>
-        Read More
-      </Button>
+     
 
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-
+        data={data}
       />
     </>
   );

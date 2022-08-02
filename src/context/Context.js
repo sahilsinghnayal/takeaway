@@ -17,7 +17,7 @@ function AppProvider({ children }) {
   }, []);
 
 
-  return <AppContext.Provider value={{loading,data}}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{loading,data,setdata}}>{children}</AppContext.Provider>;
 }
 const useGlobalContext=()=>{
     return useContext(AppContext);

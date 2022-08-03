@@ -5,18 +5,35 @@ import chili from "./chili.png";
 import Modals from "./leftcontainerCmp/Modal";
 
 function Card() {
-  const [count, setcount] = useState(0);
   const [modalShow, setModalShow] = React.useState(false);
   const [modaldata, setmodaldata] = useState(null);
   const { data, setdata } = useGlobalContext();
   console.log(data);
 
-  const minus = (e) => {
-    console.log(e.target.textContent);
-  };
+ 
   const openModal = (data) => {
+    // data coming from onclick as value.
     setmodaldata(data);
     setModalShow(true);
+  };
+  const minus = (id) => {
+    setdata((p) => {
+      return p.map((item) => {
+        if (item.Product.ProductID === id &&item.Product.ProductQty===1) {
+          return {
+            ...item,
+            Product: {
+              ...item.Product,
+              ProductQty: item.Product.ProductQty - 1,
+            },
+          };
+        } else {
+          return item;
+        }
+      });
+    });
+    // console.log(id, data);
+    
   };
   const add = (id) => {
     setdata((p) => {
@@ -76,7 +93,18 @@ function Card() {
                   {/* <p className="card-text">
             {value.Product.vMenuDescription}
           </p> */}
-                  <button onClick={() => openModal(value)}> open</button>
+                  <button
+                    style={{
+                      background: "#2080bd",
+                      color: "white",
+                      border: "none",
+                      borderRadius: "7px",
+                    }}
+                    onClick={() => openModal(value)}
+                  >
+                    {" "}
+                    Read More
+                  </button>
                   <div
                     style={{ display: "flex", justifyContent: "center" }}
                     className="modalcont"
@@ -106,7 +134,8 @@ function Card() {
                         border: "1px solid black",
                         borderRadius: "12px",
                       }}
-                      onClick={minus}
+                    
+                      onClick={()=>minus(value.Product.ProductID)}
                     >
                       {" "}
                       -
